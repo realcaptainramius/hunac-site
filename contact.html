@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Hunac Enterprises</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <div class="mark">HE</div>
+      <div class="name">Hunac Enterprises</div>
+      <nav class="top">
+        <a href="/apps.html">Apps</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2 class="section-title">Get in touch</h2>
+        <p class="section-sub">Whether it's a project quote or just a question, we'd love to hear from you. We'll do our best to respond quickly.</p>
+
+        <form class="stack" id="contact-form">
+          <div class="row">
+            <div>
+              <label for="first">First name</label>
+              <input id="first" name="first" required>
+            </div>
+            <div>
+              <label for="last">Last name</label>
+              <input id="last" name="last" required>
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div>
+            <label for="interest">What are you interested in?</label>
+            <select id="interest" name="interest">
+              <option>Software / app development</option>
+              <option>Photography or video</option>
+              <option>3D printing / prototyping</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit">Send message</button>
+          <p class="note">This opens a pre-filled email in your mail app, addressed to <a href="mailto:apps@hunacenterprises.com">apps@hunacenterprises.com</a>.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site">
+      <div>&copy; 2026 Hunac Enterprises, LLC</div>
+      <div><a href="mailto:apps@hunacenterprises.com">apps@hunacenterprises.com</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var first = document.getElementById('first').value.trim();
+      var last = document.getElementById('last').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var interest = document.getElementById('interest').value;
+      var message = document.getElementById('message').value.trim();
+
+      var subject = 'Website inquiry: ' + interest;
+      var body =
+        'Name: ' + first + ' ' + last + '\n' +
+        'Email: ' + email + '\n' +
+        'Interested in: ' + interest + '\n\n' +
+        message;
+
+      window.location.href =
+        'mailto:apps@hunacenterprises.com' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>
