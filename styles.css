@@ -72,6 +72,14 @@ header.site .name {
   font-size: 1.05rem;
 }
 
+header.site a.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: inherit;
+  text-decoration: none;
+}
+
 nav.top {
   margin-left: auto;
   display: flex;
